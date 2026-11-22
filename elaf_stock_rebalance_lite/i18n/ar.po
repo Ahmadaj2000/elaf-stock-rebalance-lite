@@ -1,0 +1,2195 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* elaf_stock_rebalance_lite
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20261102\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-21 21:36+0000\n"
+"PO-Revision-Date: 2026-11-21 21:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: ar\n"
+"Plural-Forms: \n"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"%(dwh)s can spare %(spare)s %(uom)s while keeping %(min)s days of cover "
+"(available %(avail)s after excluding %(res)s reserved, demand %(daily)s/day,"
+" protected %(prot)s)."
+msgstr "يمكن لـ %(dwh)s التنازل عن %(spare)s %(uom)s مع الإبقاء على تغطية %(min)s يومًا (المتاح %(avail)s بعد استبعاد %(res)s محجوزة، الطلب %(daily)s/يوم، المحمي %(prot)s)."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"%(dwh)s has no customer demand in the last %(days)s days, so it can spare "
+"%(spare)s %(uom)s (available %(avail)s after excluding %(res)s reserved)."
+msgstr "لا يوجد طلب عملاء على %(dwh)s خلال آخر %(days)s يومًا، لذا يمكنه التنازل عن %(spare)s %(uom)s (المتاح %(avail)s بعد استبعاد %(res)s محجوزة)."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/line.py:0
+msgid ""
+"%(model)s rows are results of the analysis and cannot be %(operation)s "
+"manually. Re-run the analysis to refresh them."
+msgstr "صفوف %(model)s هي نتائج التحليل ولا يمكن %(operation)s يدويًا. أعد تشغيل التحليل لتحديثها."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"%(n)s additional recommendations (%(q)s units) were found beyond the Lite "
+"limit of 10 shown per run."
+msgstr "تم العثور على %(n)s توصيات إضافية (%(q)s وحدة) تتجاوز حد النسخة المجانية البالغ 10 توصيات معروضة لكل تشغيل."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "%(n)s in total"
+msgstr "%(n)s إجمالًا"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "%(n)s pairs above %(t)s days"
+msgstr "%(n)s زوجًا فوق %(t)s يومًا"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "%(n)s recommendations"
+msgstr "%(n)s توصيات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"%(n)s shortages found, but no warehouse can spare stock without falling "
+"below its minimum coverage."
+msgstr "تم العثور على %(n)s حالات نقص، لكن لا يوجد مستودع يمكنه التنازل عن مخزون دون النزول تحت الحد الأدنى لتغطيته."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "%(n)s warehouse-product pairs below %(t)s days"
+msgstr "%(n)s زوجًا (مستودع-منتج) تحت %(t)s يومًا"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"%(p)s products x %(w)s warehouses analysed; demand look-back since %(d)s."
+msgstr "تم تحليل %(p)s منتجات × %(w)s مستودعات؛ فترة احتساب الطلب منذ %(d)s."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"%(rwh)s needs %(need)s %(uom)s to reach %(target)s days of cover (available "
+"%(avail)s, demand %(daily)s/day, coverage %(cov)s days)."
+msgstr "يحتاج %(rwh)s إلى %(need)s %(uom)s للوصول إلى تغطية %(target)s يومًا (المتاح %(avail)s، الطلب %(daily)s/يوم، التغطية %(cov)s يومًا)."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"%(rwh)s still needs %(need)s %(uom)s (of %(full)s) to reach %(target)s days "
+"of cover (available %(avail)s, demand %(daily)s/day, coverage %(cov)s days)."
+msgstr "لا يزال %(rwh)s يحتاج إلى %(need)s %(uom)s (من أصل %(full)s) للوصول إلى تغطية %(target)s يومًا (المتاح %(avail)s، الطلب %(daily)s/يوم، التغطية %(cov)s يومًا)."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"%(used)s of %(limit)s Lite analyses used. Past runs always stay available; "
+"the Pro edition removes the limit."
+msgstr "تم استخدام %(used)s من %(limit)s تحليلات في النسخة المجانية. تبقى التشغيلات السابقة متاحة دائمًا؛ النسخة الاحترافية تلغي الحد."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "%(used)s of %(limit)s Lite analyses used; %(rem)s remaining."
+msgstr "تم استخدام %(used)s من %(limit)s تحليلات في النسخة المجانية؛ المتبقي %(rem)s."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid ""
+")\n"
+"                        were found beyond the 10 shown by the Lite edition."
+msgstr ") تتجاوز التوصيات العشر المعروضة في النسخة المجانية."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid ") were found beyond the 10 shown in Lite."
+msgstr ") تتجاوز التوصيات العشر المعروضة في النسخة المجانية."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid ""
+").\n"
+"                            All your data, settings and history are kept; the limits are removed and the Pro\n"
+"                            features appear in the same menus."
+msgstr "). تُحفظ جميع بياناتك وإعداداتك وسجلّك؛ تُزال الحدود وتظهر ميزات النسخة الاحترافية في القوائم نفسها."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid ""
+"<b>How it works.</b> Daily demand = done deliveries to customers from the warehouse\n"
+"                                    during the look-back period (minus customer returns) / look-back days.\n"
+"                                    Available = on hand - reserved (never negative). Coverage = available / daily demand.\n"
+"                                    Shortage: coverage below the target. Excess: coverage above donor minimum + target."
+msgstr "<b>آلية العمل.</b> الطلب اليومي = عمليات التسليم المنجزة للعملاء من المستودع خلال فترة الاحتساب (مطروحًا منها مرتجعات العملاء) ÷ عدد أيام الفترة. المتاح = الكمية الفعلية - المحجوز (لا يكون سالبًا أبدًا). التغطية = المتاح ÷ الطلب اليومي. نقص: التغطية أقل من الهدف. فائض: التغطية أعلى من الحد الأدنى للمانح + الهدف."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid "A cancelled run cannot be analysed. Reset it to draft first."
+msgstr "لا يمكن تحليل تشغيل ملغى. أعده إلى مسودة أولًا."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__donor_min_coverage_days
+msgid ""
+"A donor never gives away stock that would take it below this coverage. A "
+"warehouse above donor minimum + target coverage is in excess."
+msgstr "لا يتنازل المستودع المانح أبدًا عن مخزون يُنزله تحت هذه التغطية. المستودع الذي تتجاوز تغطيته الحد الأدنى للمانح + الهدف يكون في حالة فائض."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__target_coverage_days
+msgid ""
+"A warehouse whose coverage is below this is in shortage. Receivers are "
+"filled up to this coverage."
+msgstr "المستودع الذي تقل تغطيته عن هذه القيمة يكون في حالة نقص. تُستكمل المستودعات المستلمة حتى هذه التغطية."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__hidden_avoided_value
+msgid "Additional Avoided Procurement (estimate)"
+msgstr "مشتريات إضافية يمكن تجنبها (تقدير)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__hidden_line_count
+msgid "Additional Recommendations Found"
+msgstr "توصيات إضافية تم العثور عليها"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__hidden_line_qty
+msgid "Additional Units Found"
+msgstr "وحدات إضافية تم العثور عليها"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_list
+msgid "After (d)"
+msgstr "بعد (يوم)"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_form
+msgid "After recommendations"
+msgstr "بعد التوصيات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "All"
+msgstr "الكل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "All runs"
+msgstr "كل التشغيلات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid "All warehouses must belong to the company of the run (%(company)s)."
+msgstr "يجب أن تنتمي جميع المستودعات إلى شركة التشغيل (%(company)s)."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Analyse"
+msgstr "تحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.actions.act_window,help:elaf_stock_rebalance_lite.action_elaf_rebalance_line
+msgid ""
+"Analyse a run: recommendations appear when a warehouse is in shortage and "
+"another one can spare stock."
+msgstr "حلّل تشغيلًا: تظهر التوصيات عندما يكون مستودع في حالة نقص ويستطيع مستودع آخر التنازل عن مخزون."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_search
+msgid "Analysed"
+msgstr "تم التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__date_analysis
+msgid "Analysed On"
+msgstr "تاريخ التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_analysis
+msgid "Analysis"
+msgstr "التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__analysis_fingerprint
+msgid "Analysis Fingerprint"
+msgstr "بصمة التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__analysis_note
+msgid "Analysis Notes"
+msgstr "ملاحظات التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Analysis Run"
+msgstr "تشغيل التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.actions.act_window,name:elaf_stock_rebalance_lite.action_elaf_rebalance_run
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_runs
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_list
+msgid "Analysis Runs"
+msgstr "تشغيلات التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid "Analysis completed"
+msgstr "اكتمل التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Analysis notes appear here after the analysis."
+msgstr "تظهر ملاحظات التحليل هنا بعد التحليل."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Analysis run"
+msgstr "تشغيل التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid "Analysis unchanged"
+msgstr "التحليل دون تغيير"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_run__state__analyzed
+msgid "Analyzed"
+msgstr "تم التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__at
+msgid "At"
+msgstr "في"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__available_qty
+msgid "Available"
+msgstr "المتاح"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.js:0
+msgid "Available %(available)s (reserved %(reserved)s), demand %(daily)s/day"
+msgstr "المتاح %(available)s (المحجوز %(reserved)s)، الطلب %(daily)s/يوم"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__coverage_days
+msgid "Available / daily demand. Infinite when there is no demand."
+msgstr "المتاح ÷ الطلب اليومي. لا نهائية عند عدم وجود طلب."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__available_after_qty
+msgid "Available After"
+msgstr "المتاح بعد التحويل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__spare_qty
+msgid "Available quantity above the protected stock."
+msgstr "الكمية المتاحة فوق المخزون المحمي."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__lookback_days
+msgid ""
+"Average daily demand = done customer deliveries over this many days / days."
+msgstr "متوسط الطلب اليومي = تسليمات العملاء المنجزة خلال هذا العدد من الأيام ÷ عدد الأيام."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_list
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_list
+msgid "Avoided Proc. (est.)"
+msgstr "مشتريات متجنبة (تقدير)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__avoided_procurement_value
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__avoided_procurement_value
+msgid "Avoided Procurement (estimate)"
+msgstr "المشتريات المتجنبة (تقدير)"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_form
+msgid "Avoided procurement (estimate)"
+msgstr "المشتريات المتجنبة (تقدير)"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Avoided procurement estimate"
+msgstr "تقدير المشتريات المتجنبة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Avoided procurement found (estimate)"
+msgstr "المشتريات المتجنبة المكتشفة (تقدير)"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid ""
+"Avoided procurement is an ESTIMATE: recommended quantity x product cost,\n"
+"                                the purchase value the receivers would otherwise need."
+msgstr "المشتريات المتجنبة قيمة تقديرية: الكمية الموصى بها × تكلفة المنتج، أي قيمة الشراء التي كانت المستودعات المستلمة ستحتاجها."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Avoided procurement net of transfer costs"
+msgstr "المشتريات المتجنبة بعد خصم تكاليف التحويل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.js:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_stat__status__balanced
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_search
+msgid "Balanced"
+msgstr "متوازن"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Before / after coverage simulation"
+msgstr "محاكاة التغطية قبل/بعد"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__bound_company_id
+msgid "Bound Company"
+msgstr "الشركة المرتبطة"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__spare_qty
+msgid "Can Spare"
+msgstr "يمكن التنازل عنه"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_run__state__cancel
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__company_id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__company_id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Compare Lite and Pro"
+msgstr "قارن بين النسختين"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Completed analyses"
+msgstr "التحليلات المكتملة"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_config
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Constraints: minimum quantity, pack size, routes, exclusions"
+msgstr "القيود: الحد الأدنى للكمية، حجم العبوة، المسارات، الاستثناءات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_usage_log__event__consumed
+msgid "Consumed"
+msgstr "مستهلك"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.js:0
+#: model:ir.actions.act_window,name:elaf_stock_rebalance_lite.action_elaf_rebalance_stat
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__stat_ids
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__coverage_display
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_stats
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_form
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_list
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_pivot
+msgid "Coverage"
+msgstr "التغطية"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__coverage_days
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_form
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_list
+msgid "Coverage (days)"
+msgstr "التغطية (أيام)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__coverage_after_days
+msgid "Coverage After (days)"
+msgstr "التغطية بعد التحويل (أيام)"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Coverage after the recommendations"
+msgstr "التغطية بعد التوصيات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Coverage by warehouse"
+msgstr "التغطية حسب المستودع"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Coverage heat table (days of cover per product and warehouse)"
+msgstr "جدول حرارة التغطية (أيام التغطية لكل منتج ومستودع)"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Coverage per product and warehouse (on hand, reserved, demand)"
+msgstr "التغطية لكل منتج ومستودع (الفعلي، المحجوز، الطلب)"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.actions.act_window,help:elaf_stock_rebalance_lite.action_elaf_rebalance_stat
+msgid ""
+"Create an analysis run and click Analyse to compute coverage per product and"
+" warehouse."
+msgstr "أنشئ تشغيل تحليل واضغط «تحليل» لحساب التغطية لكل منتج ومستودع."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid ""
+"Create an analysis run: pick the warehouses to compare and click Analyse."
+msgstr "أنشئ تشغيل تحليل: اختر المستودعات للمقارنة ثم اضغط «تحليل»."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Create draft internal transfers (manager approval)"
+msgstr "إنشاء تحويلات داخلية مسودة (بموافقة المدير)"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Create draft transfers from recommendations"
+msgstr "إنشاء تحويلات مسودة من التوصيات"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.actions.act_window,help:elaf_stock_rebalance_lite.action_elaf_rebalance_run
+msgid "Create your first rebalancing analysis"
+msgstr "أنشئ أول تحليل لإعادة توازن المخزون"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__create_uid
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__create_uid
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__create_uid
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__create_uid
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__create_date
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__create_date
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__create_date
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__create_date
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__currency_id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__daily_demand
+msgid "Daily Demand"
+msgstr "الطلب اليومي"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__protected_qty
+msgid ""
+"Daily demand x donor minimum coverage days. A donor never goes below this "
+"quantity."
+msgstr "الطلب اليومي × أيام الحد الأدنى لتغطية المانح. لا ينزل المانح أبدًا تحت هذه الكمية."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__target_qty
+msgid "Daily demand x target coverage days."
+msgstr "الطلب اليومي × أيام التغطية المستهدفة."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_dashboard
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_line__uom_id
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr "وحدة القياس الافتراضية المستخدمة في جميع عمليات المخزون."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__demand_qty
+msgid "Demand (look-back)"
+msgstr "الطلب (فترة الاحتساب)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__daily_demand
+msgid "Demand (look-back) / look-back days."
+msgstr "الطلب (فترة الاحتساب) ÷ أيام الفترة."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__lookback_days
+msgid "Demand Look-back (days)"
+msgstr "فترة احتساب الطلب (أيام)"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_form
+msgid "Demand and coverage"
+msgstr "الطلب والتغطية"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_usage_log__event__denied
+msgid "Denied"
+msgstr "مرفوض"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__analysis_fingerprint
+msgid ""
+"Digest of the parameters and stock data of the last analysis. Re-analysing "
+"an analysed run whose parameters and data are unchanged is free (S5-R3)."
+msgstr "ملخص لمعايير وبيانات المخزون في آخر تحليل. إعادة تحليل تشغيل تم تحليله دون تغيير في معاييره وبياناته مجانية (S5-R3)."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Discover Pro"
+msgstr "اكتشف النسخة الاحترافية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Dismiss"
+msgstr "إخفاء"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_edition__display_name
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__display_name
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__display_name
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__display_name
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__display_name
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__display_name
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_ir_ui_menu__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__demand_qty
+msgid ""
+"Done deliveries to customers from this warehouse during the look-back "
+"period, minus customer returns into it."
+msgstr "التسليمات المنجزة للعملاء من هذا المستودع خلال فترة الاحتساب، مطروحًا منها مرتجعات العملاء إليه."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_search
+msgid "Donor"
+msgstr "المانح"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_form
+msgid "Donor (protected)"
+msgstr "المانح (محمي)"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_list
+msgid "Donor After (d)"
+msgstr "المانح بعد (يوم)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_available_qty
+msgid "Donor Available"
+msgstr "متاح المانح"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_spare_qty
+msgid "Donor Can Spare"
+msgstr "ما يمكن للمانح التنازل عنه"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_coverage_days
+msgid "Donor Coverage"
+msgstr "تغطية المانح"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_coverage_after_days
+msgid "Donor Coverage After"
+msgstr "تغطية المانح بعد التحويل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_daily_demand
+msgid "Donor Daily Demand"
+msgstr "الطلب اليومي للمانح"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_coverage_infinite
+msgid "Donor Has No Demand"
+msgstr "لا طلب على المانح"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__donor_min_coverage_days
+msgid "Donor Minimum Coverage (days)"
+msgstr "الحد الأدنى لتغطية المانح (أيام)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_protected_qty
+msgid "Donor Protected"
+msgstr "المخزون المحمي للمانح"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_reserved_qty
+msgid "Donor Reserved"
+msgstr "محجوز المانح"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_run__state__draft
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Draft transfer creation is part of the Pro edition"
+msgstr "إنشاء التحويلات المسودة متاح في النسخة الاحترافية"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_line__avoided_procurement_value
+msgid ""
+"ESTIMATE = recommended quantity x product cost - transfer cost (route cost "
+"per unit x quantity + share of the route cost per transfer)."
+msgstr "تقدير = الكمية الموصى بها × تكلفة المنتج - تكلفة التحويل (تكلفة المسار لكل وحدة × الكمية + حصة من تكلفة المسار لكل عملية)."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__avoided_procurement_value
+msgid "ESTIMATE: sum over the recommendations of quantity x product cost."
+msgstr "تقدير: مجموع (الكمية × تكلفة المنتج) لكل التوصيات."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Estimate"
+msgstr "تقدير"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_form
+msgid "Estimate = recommended quantity x product cost."
+msgstr "التقدير = الكمية الموصى بها × تكلفة المنتج."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Estimate ·"
+msgstr "تقدير ·"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Estimate: recommended quantity x product cost"
+msgstr "تقدير: الكمية الموصى بها × تكلفة المنتج"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__event
+msgid "Event"
+msgstr "الحدث"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.js:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_stat__status__excess
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_search
+msgid "Excess"
+msgstr "فائض"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Excess redistribution and scheduled analysis"
+msgstr "إعادة توزيع الفائض والتحليل المجدول"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Excess redistribution mode"
+msgstr "وضع إعادة توزيع الفائض"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Excess stock"
+msgstr "مخزون فائض"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__excess_count
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Excesses"
+msgstr "حالات الفائض"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Explained recommendations with donor protection"
+msgstr "توصيات مشروحة مع حماية المانح"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__explanation
+msgid "Explanation"
+msgstr "الشرح"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Export of coverage and recommendations"
+msgstr "تصدير التغطية والتوصيات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/line.py:0
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+#: code:addons/elaf_stock_rebalance_lite/models/stat.py:0
+msgid ""
+"Exporting rebalancing data is a Pro feature. The Lite edition shows all "
+"results on screen."
+msgstr "تصدير بيانات إعادة التوازن ميزة في النسخة الاحترافية. تعرض النسخة المجانية جميع النتائج على الشاشة."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Feature"
+msgstr "الميزة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Feature comparison"
+msgstr "مقارنة الميزات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"First analysis completed. The Lite edition includes %(limit)s analyses; "
+"%(remaining)s remaining."
+msgstr "اكتمل أول تحليل. تتضمن النسخة المجانية %(limit)s تحليلات؛ المتبقي %(remaining)s."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_warehouse_id
+msgid "From (Donor)"
+msgstr "من (المانح)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "How upgrading works"
+msgstr "كيف تتم الترقية"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_edition__id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_ir_ui_menu__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج إلى انتباهك."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_has_error
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فبعض الرسائل بها خطأ في التسليم."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Install the Pro module (Stock Rebalancing,"
+msgstr "ثبّت الوحدة الاحترافية (إعادة توازن المخزون،"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__key
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__key
+msgid "Key"
+msgstr "المفتاح"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__write_uid
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__write_uid
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__write_uid
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__write_uid
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__write_date
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__write_date
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__write_date
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__write_date
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__last_used_at
+msgid "Last Used At"
+msgstr "آخر استخدام في"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__limit
+msgid "Limit"
+msgstr "الحد"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__product_categ_ids
+msgid "Limit the analysis to these categories (and their children)."
+msgstr "قصر التحليل على هذه الفئات (وفئاتها الفرعية)."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__product_ids
+msgid ""
+"Limit the analysis to these products. Empty = every storable product with "
+"stock or demand in the selected warehouses."
+msgstr "قصر التحليل على هذه المنتجات. فارغ = كل منتج مخزني له مخزون أو طلب في المستودعات المختارة."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Lite"
+msgstr "المجانية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Lite Edition"
+msgstr "النسخة المجانية"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.actions.act_window,name:elaf_stock_rebalance_lite.action_elaf_rebalance_usage
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_usage
+msgid "Lite Usage"
+msgstr "استخدام النسخة المجانية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Lite analyses used"
+msgstr "تحليلات النسخة المجانية المستخدمة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/usage.py:0
+msgid ""
+"Lite analysis allowance used (%(used)s/%(limit)s). Your past runs and "
+"recommendations stay available. Upgrade to Pro for unlimited analyses."
+msgstr "تم استنفاد رصيد تحليلات النسخة المجانية (%(used)s/%(limit)s). تبقى تشغيلاتك وتوصياتك السابقة متاحة. قم بالترقية إلى النسخة الاحترافية لتحليلات غير محدودة."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid ""
+"Lite analysis allowance used (%(used)s/%(limit)s). Your runs and "
+"recommendations stay available. The Pro edition removes the limit."
+msgstr "تم استنفاد رصيد تحليلات النسخة المجانية (%(used)s/%(limit)s). تبقى تشغيلاتك وتوصياتك متاحة. النسخة الاحترافية تلغي الحد."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Lite edition limits"
+msgstr "حدود النسخة المجانية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+#: model:ir.actions.client,name:elaf_stock_rebalance_lite.action_elaf_rebalance_comparison
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_comparison
+msgid "Lite vs Pro"
+msgstr "المجانية مقابل الاحترافية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Loading analysis…"
+msgstr "جارٍ تحميل التحليل…"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Loading…"
+msgstr "جارٍ التحميل…"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Location-level analysis"
+msgstr "التحليل على مستوى المواقع"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Lot and expiry awareness (FEFO)"
+msgstr "مراعاة الدفعات وتواريخ الانتهاء (الأقرب انتهاءً أولًا)"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Lot and expiry awareness, FEFO"
+msgstr "مراعاة الدفعات وتواريخ الانتهاء، الأقرب انتهاءً أولًا"
+
+#. module: elaf_stock_rebalance_lite
+#: model:res.groups,name:elaf_stock_rebalance_lite.group_rebalance_manager
+msgid "Manager"
+msgstr "مدير"
+
+#. module: elaf_stock_rebalance_lite
+#: model:res.groups,comment:elaf_stock_rebalance_lite.group_rebalance_manager
+msgid "Manages all runs of the allowed companies."
+msgstr "يدير جميع تشغيلات الشركات المسموح بها."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model,name:elaf_stock_rebalance_lite.model_ir_ui_menu
+msgid "Menu"
+msgstr "القائمة"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Minimum quantity, pack size, route priorities, exclusions"
+msgstr "الحد الأدنى للكمية، حجم العبوة، أولويات المسارات، الاستثناءات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__res_model
+msgid "Model"
+msgstr "النموذج"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "More than 2 warehouses and 50 products per run, multi-company"
+msgstr "أكثر من مستودعين و50 منتجًا لكل تشغيل، وتعدد الشركات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "More with the Pro edition"
+msgstr "المزيد مع النسخة الاحترافية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Move inventory smarter. Buy only what you need."
+msgstr "انقل مخزونك بذكاء. واشترِ فقط ما تحتاجه."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Multi-company"
+msgstr "تعدد الشركات"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_search
+msgid "My Runs"
+msgstr "تشغيلاتي"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__need_qty
+msgid "Need"
+msgstr "الاحتياج"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.js:0
+msgid "New Analysis"
+msgstr "تحليل جديد"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "New analysis"
+msgstr "تحليل جديد"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__coverage_infinite
+msgid "No Demand"
+msgstr "لا يوجد طلب"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "No analysis yet"
+msgstr "لا يوجد تحليل بعد"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.actions.act_window,help:elaf_stock_rebalance_lite.action_elaf_rebalance_stat
+msgid "No coverage data yet"
+msgstr "لا توجد بيانات تغطية بعد"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "No export, schedule or bulk operations."
+msgstr "لا تصدير ولا جدولة ولا عمليات جماعية."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.actions.act_window,help:elaf_stock_rebalance_lite.action_elaf_rebalance_line
+msgid "No recommendations yet"
+msgstr "لا توجد توصيات بعد"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid "No shortage found: no transfer is needed."
+msgstr "لم يُعثر على نقص: لا حاجة إلى أي تحويل."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.js:0
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_stat__status__inactive
+msgid "No stock, no demand"
+msgstr "لا مخزون ولا طلب"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"No storable product has stock or customer demand in the selected warehouses "
+"for this filter and look-back period."
+msgstr "لا يوجد منتج مخزني له مخزون أو طلب عملاء في المستودعات المختارة لهذا التصفية وفترة الاحتساب."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "No transfer recommended"
+msgstr "لا يوجد تحويل موصى به"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__on_hand_qty
+msgid "On Hand"
+msgstr "الكمية الفعلية"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__available_qty
+msgid "On hand minus reserved, never negative."
+msgstr "الكمية الفعلية ناقص المحجوز، لا تكون سالبة أبدًا."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "One"
+msgstr "شركة واحدة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "One company."
+msgstr "شركة واحدة."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.constraint,message:elaf_stock_rebalance_lite.constraint_elaf_rebalance_usage_key_uniq
+msgid "One usage row per counter key."
+msgstr "سجل استخدام واحد لكل مفتاح عداد."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Open run"
+msgstr "فتح التشغيل"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Parameters"
+msgstr "المعاملات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"Parameters and stock data are unchanged since the last analysis: the results"
+" were refreshed and no Lite analysis was used (%(used)s of %(limit)s used)."
+msgstr "لم تتغير المعايير ولا بيانات المخزون منذ آخر تحليل: تم تحديث النتائج ولم يُحتسب أي تحليل من النسخة المجانية (المستخدم %(used)s من %(limit)s)."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"Parameters and stock data are unchanged since the last analysis: the results"
+" were refreshed."
+msgstr "لم تتغير المعايير ولا بيانات المخزون منذ آخر تحليل: تم تحديث النتائج."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__user_id
+msgid "Planner"
+msgstr "المخطط"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Pro"
+msgstr "احترافية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Pro Edition"
+msgstr "النسخة الاحترافية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__product_id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__product_id
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_search
+msgid "Product"
+msgstr "المنتج"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__product_categ_ids
+msgid "Product Categories"
+msgstr "فئات المنتجات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_line__unit_cost
+msgid ""
+"Product cost (standard price) in the company's currency at analysis time."
+msgstr "تكلفة المنتج (السعر القياسي) بعملة الشركة وقت التحليل."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__product_ids
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Products"
+msgstr "المنتجات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__product_count
+msgid "Products Analysed"
+msgstr "المنتجات المحللة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Products in excess"
+msgstr "منتجات في حالة فائض"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Products in shortage"
+msgstr "منتجات في حالة نقص"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Products per run"
+msgstr "المنتجات لكل تشغيل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_line__state__proposed
+msgid "Proposed"
+msgstr "مقترح"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__protected_qty
+msgid "Protected Stock"
+msgstr "المخزون المحمي"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__need_qty
+msgid "Quantity missing to reach the target coverage."
+msgstr "الكمية الناقصة للوصول إلى التغطية المستهدفة."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__reserved_qty
+msgid "Quantity reserved for other operations. Never proposed for transfer."
+msgstr "كمية محجوزة لعمليات أخرى. لا تُقترح للتحويل أبدًا."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_line__receiver_need_qty
+msgid ""
+"Quantity still needed by the receiver when this line was computed (after "
+"earlier lines for the same receiver)."
+msgstr "الكمية التي كان المستلم لا يزال يحتاجها عند حساب هذا السطر (بعد الأسطر السابقة للمستلم نفسه)."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_line__donor_spare_qty
+msgid "Quantity the donor could still spare when this line was computed."
+msgstr "الكمية التي كان المانح لا يزال يستطيع التنازل عنها عند حساب هذا السطر."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_usage_log__event__unchanged
+msgid "Re-analysis unchanged (not counted)"
+msgstr "إعادة تحليل دون تغيير (غير محتسبة)"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Re-run Analysis"
+msgstr "إعادة التحليل"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid ""
+"Re-running replaces the current coverage and recommendations of this run. It"
+" counts as a new analysis unless the parameters and the stock data are "
+"unchanged. Continue?"
+msgstr "تستبدل إعادة التشغيل التغطية والتوصيات الحالية لهذا التشغيل. تُحتسب تحليلًا جديدًا ما لم تكن المعايير وبيانات المخزون دون تغيير. هل تريد المتابعة؟"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.actions.client,name:elaf_stock_rebalance_lite.action_elaf_rebalance_dashboard
+msgid "Rebalancing Dashboard"
+msgstr "لوحة إعادة التوازن"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_form
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_search
+msgid "Receiver"
+msgstr "المستلم"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__receiver_available_qty
+msgid "Receiver Available"
+msgstr "متاح المستلم"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_list
+msgid "Receiver Cover (d)"
+msgstr "تغطية المستلم (يوم)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__receiver_coverage_days
+msgid "Receiver Coverage"
+msgstr "تغطية المستلم"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__receiver_coverage_after_days
+msgid "Receiver Coverage After"
+msgstr "تغطية المستلم بعد التحويل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__receiver_daily_demand
+msgid "Receiver Daily Demand"
+msgstr "الطلب اليومي للمستلم"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__receiver_need_qty
+msgid "Receiver Need"
+msgstr "احتياج المستلم"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_line__reason__shortage
+msgid "Receiver shortage"
+msgstr "نقص لدى المستلم"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.js:0
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_form
+msgid "Recommendation"
+msgstr "توصية"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__line_ids
+msgid "Recommendation Lines"
+msgstr "أسطر التوصيات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+#: model:ir.actions.act_window,name:elaf_stock_rebalance_lite.action_elaf_rebalance_line
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__line_count
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_lines
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_list
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Recommendations"
+msgstr "التوصيات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Recommendations are read-only: transfer creation is a Pro feature."
+msgstr "التوصيات للقراءة فقط: إنشاء التحويلات ميزة في النسخة الاحترافية."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Recommendations beyond the Lite 10"
+msgstr "توصيات تتجاوز العشر في النسخة المجانية"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__hidden_line_count
+msgid "Recommendations found beyond the Lite limit of 10 per run."
+msgstr "توصيات تم العثور عليها تتجاوز حد النسخة المجانية البالغ 10 لكل تشغيل."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Recommendations shown per run"
+msgstr "التوصيات المعروضة لكل تشغيل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid "Recommended = min(%(need)s, %(spare)s) = %(qty)s %(uom)s."
+msgstr "الموصى به = الأدنى(%(need)s، %(spare)s) = %(qty)s %(uom)s."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"Recommended = min(%(need)s, %(spare)s) = %(raw)s, rounded to %(qty)s "
+"%(uom)s."
+msgstr "الموصى به = الأدنى(%(need)s، %(spare)s) = %(raw)s، مقرّبة إلى %(qty)s %(uom)s."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__incoming_qty
+msgid "Recommended In"
+msgstr "الوارد الموصى به"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__outgoing_qty
+msgid "Recommended Out"
+msgstr "الصادر الموصى به"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__quantity
+msgid "Recommended Qty"
+msgstr "الكمية الموصى بها"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__recommended_qty
+msgid "Recommended Units"
+msgstr "الوحدات الموصى بها"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid ""
+"Recommended quantity = min(receiver need to reach the target coverage,\n"
+"                                    donor stock above its minimum coverage). Reserved stock is never proposed."
+msgstr "الكمية الموصى بها = الأدنى(احتياج المستلم للوصول إلى التغطية المستهدفة، مخزون المانح فوق حده الأدنى للتغطية). لا يُقترح المخزون المحجوز أبدًا."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Recommended units"
+msgstr "الوحدات الموصى بها"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__res_id
+msgid "Record ID"
+msgstr "معرف السجل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Refresh"
+msgstr "تحديث"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__reserved_qty
+msgid "Reserved"
+msgstr "المحجوز"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Reserved stock never proposed"
+msgstr "المخزون المحجوز لا يُقترح أبدًا"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى مسودة"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Results"
+msgstr "النتائج"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__whole_units
+msgid "Round needs up and spare quantities down to whole numbers."
+msgstr "تقريب الاحتياج لأعلى والكميات القابلة للتنازل لأسفل إلى أعداد صحيحة."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__run_id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__run_id
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_form
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_search
+msgid "Run"
+msgstr "التشغيل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:res.groups,comment:elaf_stock_rebalance_lite.group_rebalance_user
+msgid "Runs stock rebalancing analyses and reads recommendations."
+msgstr "يشغّل تحليلات إعادة توازن المخزون ويطّلع على التوصيات."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Scheduled analysis with manager activities"
+msgstr "تحليل مجدول مع أنشطة للمديرين"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Scope"
+msgstr "النطاق"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "See all"
+msgstr "عرض الكل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid "Select at least two warehouses to compare."
+msgstr "اختر مستودعين على الأقل للمقارنة."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.actions.act_window,help:elaf_stock_rebalance_lite.action_elaf_rebalance_run
+msgid ""
+"Select the warehouses to compare, set the coverage targets and click "
+"Analyse."
+msgstr "اختر المستودعات للمقارنة، وحدد أهداف التغطية، ثم اضغط «تحليل»."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.js:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+#: model:ir.model.fields.selection,name:elaf_stock_rebalance_lite.selection__elaf_rebalance_stat__status__shortage
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_search
+msgid "Shortage"
+msgstr "نقص"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__shortage_count
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid "Shortages"
+msgstr "حالات النقص"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Showing the"
+msgstr "عرض"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__state
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__state
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__status
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_search
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_form
+msgid "Stock"
+msgstr "المخزون"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_root
+#: model:res.groups.privilege,name:elaf_stock_rebalance_lite.res_groups_privilege_rebalance
+msgid "Stock Rebalancing"
+msgstr "إعادة توازن المخزون"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model,name:elaf_stock_rebalance_lite.model_elaf_rebalance_stat
+msgid "Stock Rebalancing Coverage"
+msgstr "تغطية إعادة توازن المخزون"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model,name:elaf_stock_rebalance_lite.model_elaf_rebalance_edition
+msgid "Stock Rebalancing Edition"
+msgstr "نسخة إعادة توازن المخزون"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model,name:elaf_stock_rebalance_lite.model_elaf_rebalance_line
+msgid "Stock Rebalancing Recommendation"
+msgstr "توصية إعادة توازن المخزون"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model,name:elaf_stock_rebalance_lite.model_elaf_rebalance_run
+msgid "Stock Rebalancing Run"
+msgstr "تشغيل إعادة توازن المخزون"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model,name:elaf_stock_rebalance_lite.model_elaf_rebalance_usage
+msgid "Stock Rebalancing Usage Counter"
+msgstr "عداد استخدام إعادة توازن المخزون"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model,name:elaf_stock_rebalance_lite.model_elaf_rebalance_usage_log
+msgid "Stock Rebalancing Usage Log"
+msgstr "سجل استخدام إعادة توازن المخزون"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Stock Rebalancing: Lite vs Pro"
+msgstr "إعادة توازن المخزون: المجانية مقابل الاحترافية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Stocked products not analysed yet"
+msgstr "منتجات لها مخزون لم تُحلل بعد"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Support:"
+msgstr "الدعم:"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Target"
+msgstr "الهدف"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__target_coverage_days
+msgid "Target Coverage (days)"
+msgstr "التغطية المستهدفة (أيام)"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__target_qty
+msgid "Target Stock"
+msgstr "المخزون المستهدف"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_form
+msgid "Targets"
+msgstr "الأهداف"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"The Lite edition compares up to %(max)s warehouses per run. Comparing more "
+"warehouses in one run is a Pro feature."
+msgstr "تقارن النسخة المجانية حتى %(max)s مستودعات لكل تشغيل. مقارنة مستودعات أكثر في تشغيل واحد ميزة في النسخة الاحترافية."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/usage.py:0
+msgid ""
+"The Lite edition works with one company: %(bound)s. The Pro edition supports"
+" multiple companies."
+msgstr "تعمل النسخة المجانية مع شركة واحدة: %(bound)s. النسخة الاحترافية تدعم شركات متعددة."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid ""
+"The Pro edition is installed: every Lite limit is removed and all your Lite "
+"runs are kept."
+msgstr "النسخة الاحترافية مثبتة: أُزيلت جميع حدود النسخة المجانية واحتُفظ بجميع تشغيلاتك السابقة."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "The dashboard could not be loaded"
+msgstr "تعذّر تحميل لوحة المعلومات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"The donor minimum coverage (%(donor)s days) must be at least the target "
+"coverage (%(target)s days); otherwise stock would move back and forth."
+msgstr "يجب ألا يقل الحد الأدنى لتغطية المانح (%(donor)s يومًا) عن التغطية المستهدفة (%(target)s يومًا)؛ وإلا سيتنقل المخزون ذهابًا وإيابًا."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.constraint,message:elaf_stock_rebalance_lite.constraint_elaf_rebalance_run_lookback_positive
+msgid "The look-back must be at least one day."
+msgstr "يجب أن تكون فترة الاحتساب يومًا واحدًا على الأقل."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "The page could not be loaded"
+msgstr "تعذّر تحميل الصفحة"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.constraint,message:elaf_stock_rebalance_lite.constraint_elaf_rebalance_run_target_positive
+msgid "The target coverage must be positive."
+msgstr "يجب أن تكون التغطية المستهدفة موجبة."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid ""
+"This run covers %(count)s products; the Lite edition analyses up to %(max)s "
+"products per run. Narrow the product or category filter, or use the Pro "
+"edition for unlimited products."
+msgstr "يشمل هذا التشغيل %(count)s منتجًا؛ تحلل النسخة المجانية حتى %(max)s منتجًا لكل تشغيل. ضيّق تصفية المنتجات أو الفئات، أو استخدم النسخة الاحترافية لمنتجات غير محدودة."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__receiver_warehouse_id
+msgid "To (Receiver)"
+msgstr "إلى (المستلم)"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Top 10"
+msgstr "أفضل 10"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_line_list
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_list
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Transfers created"
+msgstr "التحويلات المنشأة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "Try again"
+msgstr "حاول مرة أخرى"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__uom_id
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__uom_id
+msgid "Unit"
+msgstr "الوحدة"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_line__unit_cost
+msgid "Unit Cost"
+msgstr "تكلفة الوحدة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.js:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.js:0
+msgid "Unknown error"
+msgstr "خطأ غير معروف"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Unlimited"
+msgstr "غير محدود"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid ""
+"Up to 10 recommendations shown per run; the number of additional ones is "
+"shown."
+msgstr "حتى 10 توصيات معروضة لكل تشغيل؛ ويُعرض عدد التوصيات الإضافية."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Up to 2 warehouses per analysis run."
+msgstr "حتى مستودعين لكل تشغيل تحليل."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Up to 3 completed analysis runs in total; past runs stay viewable."
+msgstr "حتى 3 تشغيلات تحليل مكتملة إجمالًا؛ وتبقى التشغيلات السابقة قابلة للعرض."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Up to 50 products per analysis run."
+msgstr "حتى 50 منتجًا لكل تشغيل تحليل."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_usage_list
+msgid "Usage"
+msgstr "الاستخدام"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.actions.act_window,name:elaf_stock_rebalance_lite.action_elaf_rebalance_usage_log
+#: model:ir.ui.menu,name:elaf_stock_rebalance_lite.menu_elaf_rebalance_usage_log
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_usage_log_list
+msgid "Usage Log"
+msgstr "سجل الاستخدام"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/usage.py:0
+msgid "Usage counters cannot be created manually."
+msgstr "لا يمكن إنشاء عدادات الاستخدام يدويًا."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/usage.py:0
+msgid "Usage counters cannot be deleted."
+msgstr "لا يمكن حذف عدادات الاستخدام."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/usage.py:0
+msgid "Usage counters cannot be modified."
+msgstr "لا يمكن تعديل عدادات الاستخدام."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/usage.py:0
+msgid "Usage log entries cannot be created manually."
+msgstr "لا يمكن إنشاء قيود سجل الاستخدام يدويًا."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/usage.py:0
+msgid "Usage log entries cannot be deleted."
+msgstr "لا يمكن حذف قيود سجل الاستخدام."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/usage.py:0
+msgid "Usage log entries cannot be modified."
+msgstr "لا يمكن تعديل قيود سجل الاستخدام."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage__used
+msgid "Used"
+msgstr "المستخدم"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__used_after
+msgid "Used After"
+msgstr "المستخدم بعد العملية"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_usage_log__user_id
+#: model:res.groups,name:elaf_stock_rebalance_lite.group_rebalance_user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_stat__warehouse_id
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_search
+msgid "Warehouse"
+msgstr "المستودع"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/run.py:0
+msgid "Warehouse %(wh)s has no stock location."
+msgstr "المستودع %(wh)s ليس له موقع مخزون."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__warehouse_ids
+msgid "Warehouses"
+msgstr "المستودعات"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__warehouse_count
+msgid "Warehouses Analysed"
+msgstr "المستودعات المحللة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Warehouses analysed"
+msgstr "المستودعات المحللة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "Warehouses not analysed yet"
+msgstr "مستودعات لم تُحلل بعد"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "Warehouses per run"
+msgstr "المستودعات لكل تشغيل"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__warehouse_ids
+msgid "Warehouses to compare (at least 2). Lite: at most 2."
+msgstr "المستودعات المراد مقارنتها (اثنان على الأقل). النسخة المجانية: اثنان كحد أقصى."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,help:elaf_stock_rebalance_lite.field_elaf_rebalance_run__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "What each edition does, and what Pro would add on your own data."
+msgstr "ما تقدمه كل نسخة، وما ستضيفه النسخة الاحترافية على بياناتك الفعلية."
+
+#. module: elaf_stock_rebalance_lite
+#: model:ir.model.fields,field_description:elaf_stock_rebalance_lite.field_elaf_rebalance_run__whole_units
+msgid "Whole Quantities"
+msgstr "كميات صحيحة"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_stat_search
+msgid "With reservations"
+msgstr "مع حجوزات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "You have"
+msgstr "لديك"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid "You need the Stock Rebalancing user access to view this page."
+msgstr "تحتاج إلى صلاحية مستخدم إعادة توازن المخزون لعرض هذه الصفحة."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/dashboard.py:0
+msgid ""
+"Your first analysis is ready. Open a recommendation to see how its quantity "
+"was computed."
+msgstr "أول تحليل لك جاهز. افتح توصية لترى كيف حُسبت كميتها."
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid ""
+"additional\n"
+"                        recommendations ("
+msgstr "توصيات إضافية ("
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid ""
+"additional recommendations\n"
+"                            ("
+msgstr "توصيات إضافية ("
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "analysed run(s)"
+msgstr "تشغيل/تشغيلات محللة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "coverage after the recommendations"
+msgstr "التغطية بعد التوصيات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/line.py:0
+#: code:addons/elaf_stock_rebalance_lite/models/stat.py:0
+msgid "created"
+msgstr "إنشاؤها"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "days · demand look-back"
+msgstr "يومًا · فترة احتساب الطلب"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "days · donor minimum"
+msgstr "يومًا · الحد الأدنى للمانح"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "days. Click a cell for the details."
+msgstr "يومًا. اضغط على خلية لعرض التفاصيل."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/line.py:0
+#: code:addons/elaf_stock_rebalance_lite/models/stat.py:0
+msgid "deleted"
+msgstr "حذفها"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "draft run(s)."
+msgstr "تشغيل/تشغيلات مسودة."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "elaf_stock_rebalance"
+msgstr "elaf_stock_rebalance"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "est. avoided procurement"
+msgstr "مشتريات متجنبة تقديرية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "estimated"
+msgstr "تقديريًا"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-python
+#: code:addons/elaf_stock_rebalance_lite/models/line.py:0
+#: code:addons/elaf_stock_rebalance_lite/models/stat.py:0
+msgid "modified"
+msgstr "تعديلها"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "most urgent of"
+msgstr "الأكثر إلحاحًا من أصل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "of"
+msgstr "من أصل"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "products with stock"
+msgstr "منتجًا لها مخزون"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "products."
+msgstr "منتجًا."
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "recommendations"
+msgstr "توصيات"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "remaining"
+msgstr "متبقٍ"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "units,"
+msgstr "وحدة،"
+
+#. module: elaf_stock_rebalance_lite
+#: model_terms:ir.ui.view,arch_db:elaf_stock_rebalance_lite.view_elaf_rebalance_run_form
+msgid ""
+"units,\n"
+"                        avoided procurement estimate"
+msgstr "وحدة، المشتريات المتجنبة التقديرية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "units, estimated avoided procurement"
+msgstr "وحدة، المشتريات المتجنبة التقديرية"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "warehouses in this company"
+msgstr "مستودعات في هذه الشركة"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/comparison.xml:0
+msgid "· quantity x product cost over"
+msgstr "· الكمية × تكلفة المنتج عبر"
+
+#. module: elaf_stock_rebalance_lite
+#. odoo-javascript
+#: code:addons/elaf_stock_rebalance_lite/static/src/dashboard/dashboard.xml:0
+msgid "∞ = no demand"
+msgstr "∞ = لا يوجد طلب"

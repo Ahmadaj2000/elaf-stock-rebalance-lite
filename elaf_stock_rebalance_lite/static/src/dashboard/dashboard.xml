@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="elaf_stock_rebalance_lite.Dashboard">
+        <div class="o_elaf_rb_dashboard o_action">
+            <div class="o_elaf_rb_header">
+                <div>
+                    <h1>
+                        Stock Rebalancing
+                        <t t-if="data and data.is_pro"><span class="o_elaf_rb_badge pro">Pro Edition</span></t>
+                        <t t-elif="data"><span class="o_elaf_rb_badge">Lite Edition</span></t>
+                    </h1>
+                    <p class="o_elaf_rb_subtitle">Move inventory smarter. Buy only what you need.</p>
+                </div>
+                <div class="o_elaf_rb_filters" t-if="data and !state.error">
+                    <select class="form-select form-select-sm w-auto" t-if="data.runs.length"
+                            t-on-change="onRunChange" aria-label="Analysis run">
+                        <t t-foreach="data.runs" t-as="r" t-key="r.id">
+                            <option t-att-value="r.id" t-att-selected="state.runId === r.id">
+                                <t t-esc="r.name"/> · <t t-esc="r.warehouses"/>
+                            </option>
+                        </t>
+                    </select>
+                    <button class="btn btn-sm btn-secondary" t-if="data.run" t-on-click="openRun">Open run</button>
+                    <button class="btn btn-sm btn-secondary" t-on-click="openRuns">All runs</button>
+                    <button class="btn btn-sm btn-primary" t-on-click="newRun"
+                            t-att-title="data.usage.exhausted ? 'The Lite analysis allowance is used: this opens the Lite vs Pro page.' : ''">
+                        <t t-if="data.usage.exhausted">New analysis <span class="o_elaf_rb_lock">Pro</span></t>
+                        <t t-else="">New analysis</t>
+                    </button>
+                    <button class="btn btn-sm btn-light" t-on-click="() => this.load()" title="Refresh" aria-label="Refresh">
+                        <i class="fa fa-refresh"/>
+                    </button>
+                </div>
+            </div>
+
+            <t t-if="state.loading">
+                <div class="o_elaf_rb_state">
+                    <div class="o_elaf_rb_spinner"/>
+                    <div class="o_elaf_rb_state_title">Loading analysis…</div>
+                </div>
+            </t>
+            <t t-elif="state.error">
+                <div class="o_elaf_rb_state error">
+                    <div class="o_elaf_rb_state_title">The dashboard could not be loaded</div>
+                    <p t-esc="state.error"/>
+                    <button class="btn btn-secondary" t-on-click="() => this.load()">Try again</button>
+                </div>
+            </t>
+            <t t-else="">
+                <div t-if="bannerVisible" t-attf-class="o_elaf_rb_banner {{ data.banner.level }}" role="status">
+                    <span t-esc="data.banner.text"/>
+                    <span>
+                        <button class="btn btn-sm btn-link" t-on-click="openComparison">Lite vs Pro</button>
+                        <button t-if="data.banner.key !== 'exhausted'" class="btn btn-sm btn-link"
+                                t-on-click="dismissBanner" aria-label="Dismiss">Dismiss</button>
+                    </span>
+                </div>
+
+                <div class="o_elaf_rb_kpis">
+                    <t t-foreach="data.kpis" t-as="kpi" t-key="kpi.key">
+                        <div t-attf-class="o_elaf_rb_kpi {{ kpi.tone ? 'is-' + kpi.tone : '' }}"
+                             t-on-click="() => this.openAction(kpi.action)" role="button" tabindex="0"
+                             t-att-title="kpi.hint">
+                            <div class="o_elaf_rb_kpi_label"><t t-esc="kpi.label"/></div>
+                            <div class="o_elaf_rb_kpi_value"><t t-esc="kpiValue(kpi)"/></div>
+                            <div class="o_elaf_rb_kpi_hint">
+                                <span t-if="kpi.estimate" class="o_elaf_rb_estimate">Estimate · </span>
+                                <t t-esc="kpi.hint"/>
+                            </div>
+                        </div>
+                    </t>
+                    <div t-if="data.usage.capped" class="o_elaf_rb_kpi o_elaf_rb_usage" role="button" tabindex="0"
+                         t-on-click="openComparison">
+                        <div class="o_elaf_rb_kpi_label">Lite analyses used</div>
+                        <div class="o_elaf_rb_kpi_value"><bdi><t t-esc="data.usage.used"/> / <t t-esc="data.usage.limit"/></bdi></div>
+                        <div class="o_elaf_rb_progress">
+                            <div t-attf-class="o_elaf_rb_progress_bar {{ usageBarClass(data.usage) }}"
+                                 t-attf-style="width: {{ data.usage.percent }}%"/>
+                        </div>
+                        <div class="o_elaf_rb_kpi_hint"><t t-esc="data.usage.remaining"/> remaining</div>
+                    </div>
+                    <div t-if="!data.is_pro" class="o_elaf_rb_kpi is-locked" role="button" tabindex="0"
+                         t-on-click="openComparison">
+                        <div class="o_elaf_rb_kpi_label">Transfers created <span class="o_elaf_rb_lock">Pro</span></div>
+                        <div class="o_elaf_rb_kpi_value">—</div>
+                        <div class="o_elaf_rb_kpi_hint">Draft transfer creation is part of the Pro edition</div>
+                    </div>
+                </div>
+
+                <t t-if="!data.run">
+                    <div class="o_elaf_rb_card">
+                        <div class="o_elaf_rb_state">
+                            <div class="o_elaf_rb_state_title">No analysis yet</div>
+                            <p>Create an analysis run: pick the warehouses to compare and click Analyse.
+                                <t t-if="data.draft_count"> You have <t t-esc="data.draft_count"/> draft run(s).</t></p>
+                            <button class="btn btn-primary" t-on-click="newRun">New analysis</button>
+                        </div>
+                    </div>
+                </t>
+                <t t-else="">
+                    <div t-if="data.run.hidden_count" class="o_elaf_rb_banner warn" role="status">
+                        <span>
+                            <t t-esc="data.run.hidden_count"/> additional recommendations
+                            (<t t-esc="fmt(data.run.hidden_qty)"/> units, estimated avoided procurement
+                            <t t-esc="money(data.run.hidden_value)"/>) were found beyond the 10 shown in Lite.
+                        </span>
+                        <button class="btn btn-sm btn-link" t-on-click="openComparison">Lite vs Pro</button>
+                    </div>
+                    <div class="o_elaf_rb_grid">
+                        <div class="o_elaf_rb_card o_elaf_rb_reco_card">
+                            <h2>Recommendations</h2>
+                            <t t-if="!data.recommendations.length">
+                                <div class="o_elaf_rb_state">
+                                    <div class="o_elaf_rb_state_title">No transfer recommended</div>
+                                    <p t-esc="data.run.note"/>
+                                </div>
+                            </t>
+                            <t t-foreach="data.recommendations" t-as="reco" t-key="reco.id">
+                                <div class="o_elaf_rb_reco" t-on-click="() => this.openLine(reco)" role="button" tabindex="0">
+                                    <div class="o_elaf_rb_reco_head">
+                                        <span><t t-esc="reco.product"/></span>
+                                        <span>
+                                            <t t-esc="fmt(reco.qty)"/> <t t-esc="reco.uom"/>
+                                            <span class="o_elaf_rb_pill ms-1"><t t-esc="reco.state_label"/></span>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <t t-esc="reco.donor"/> <i class="fa fa-long-arrow-right o_elaf_rb_dir mx-1"/> <t t-esc="reco.receiver"/>
+                                        <span class="o_elaf_rb_estimate ms-2">
+                                            est. avoided procurement <t t-esc="money(reco.value)"/>
+                                        </span>
+                                    </div>
+                                    <div class="o_elaf_rb_reco_text"><t t-esc="reco.explanation"/></div>
+                                </div>
+                            </t>
+                            <button t-if="data.run.line_count > data.recommendations.length" class="btn btn-link px-0"
+                                    t-on-click="() => this.openAction(data.kpis.find((k) => k.key === 'units').action)">
+                                See all <t t-esc="data.run.line_count"/> recommendations
+                            </button>
+                        </div>
+
+                        <div t-if="!data.is_pro" class="o_elaf_rb_card o_elaf_rb_locked_card">
+                            <h2>More with the Pro edition</h2>
+                            <ul class="o_elaf_rb_locked_list">
+                                <t t-foreach="data.locked_features" t-as="feat" t-key="feat_index">
+                                    <li><span t-esc="feat"/><span class="o_elaf_rb_lock">Pro</span></li>
+                                </t>
+                            </ul>
+                            <button class="btn btn-link px-0 mt-2" t-on-click="openComparison">Compare Lite and Pro</button>
+                        </div>
+                        <div class="o_elaf_rb_pro_anchor d-none"/>
+                        <div class="o_elaf_rb_card o_elaf_rb_heat_card" style="grid-column: 1 / -1;">
+                            <h2>Coverage heat table (days of cover per product and warehouse)</h2>
+                            <p class="text-muted small mb-2">
+                                Target <t t-esc="fmt(data.run.target)"/> days · donor minimum
+                                <t t-esc="fmt(data.run.donor_min)"/> days · demand look-back
+                                <t t-esc="data.run.lookback"/> days. Click a cell for the details.
+                            </p>
+                            <div class="o_elaf_rb_table_wrap">
+                                <table class="o_elaf_rb_table o_elaf_rb_heat">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <t t-foreach="data.heat.warehouses" t-as="wh" t-key="wh.id">
+                                                <th class="o_elaf_rb_wh"><t t-esc="wh.name"/></th>
+                                            </t>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="data.heat.rows" t-as="row" t-key="row.product_id">
+                                            <tr>
+                                                <td><t t-esc="row.product"/></td>
+                                                <t t-foreach="row.cells" t-as="cell" t-key="cell_index">
+                                                    <td t-attf-class="o_elaf_rb_cell {{ cell ? cell.status : '' }}"
+                                                        t-on-click="() => this.openStat(cell)"
+                                                        t-att-title="cellTitle(cell)">
+                                                        <t t-if="cell">
+                                                            <t t-esc="cell.coverage"/>
+                                                            <span t-if="cell.changed and cell.after !== null" class="o_elaf_rb_after">
+                                                                <i class="fa fa-long-arrow-right o_elaf_rb_dir" title="Coverage after the recommendations"/> <t t-esc="fmt(cell.after, 1)"/>
+                                                            </span>
+                                                        </t>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="o_elaf_rb_legend">
+                                <span class="o_elaf_rb_pill bad">Shortage</span>
+                                <span class="o_elaf_rb_pill ok">Balanced</span>
+                                <span class="o_elaf_rb_pill warn">Excess</span>
+                                <span class="o_elaf_rb_pill">∞ = no demand</span>
+                                <span class="o_elaf_rb_pill"><i class="fa fa-long-arrow-right o_elaf_rb_dir"/> coverage after the recommendations</span>
+                                <span t-if="data.heat.truncated" class="text-muted">
+                                    Showing the <t t-esc="data.heat.rows.length"/> most urgent of
+                                    <t t-esc="data.heat.total"/> products.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </div>
+    </t>
+</templates>

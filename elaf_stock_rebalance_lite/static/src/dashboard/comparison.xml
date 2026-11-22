@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="elaf_stock_rebalance_lite.Comparison">
+        <div class="o_elaf_rb_comparison o_action">
+            <div class="o_elaf_rb_header">
+                <div>
+                    <h1>
+                        Stock Rebalancing: Lite vs Pro
+                        <t t-if="state.data and state.data.is_pro"><span class="o_elaf_rb_badge pro">Pro Edition</span></t>
+                        <t t-elif="state.data"><span class="o_elaf_rb_badge">Lite Edition</span></t>
+                    </h1>
+                    <p class="o_elaf_rb_subtitle">What each edition does, and what Pro would add on your own data.</p>
+                </div>
+                <div class="o_elaf_rb_filters">
+                    <button class="btn btn-sm btn-secondary" t-on-click="openDashboard">Dashboard</button>
+                </div>
+            </div>
+            <t t-if="state.loading">
+                <div class="o_elaf_rb_state"><div class="o_elaf_rb_spinner"/><div class="o_elaf_rb_state_title">Loading…</div></div>
+            </t>
+            <t t-elif="state.error">
+                <div class="o_elaf_rb_state error">
+                    <div class="o_elaf_rb_state_title">The page could not be loaded</div>
+                    <p t-esc="state.error"/>
+                    <button class="btn btn-secondary" t-on-click="() => this.load()">Try again</button>
+                </div>
+            </t>
+            <t t-else="">
+                <t t-set="d" t-value="state.data"/>
+                <div t-if="d.is_pro" class="o_elaf_rb_banner" role="status">
+                    The Pro edition is installed: every Lite limit is removed and all your Lite runs are kept.
+                </div>
+                <div class="o_elaf_rb_kpis">
+                    <div class="o_elaf_rb_kpi">
+                        <div class="o_elaf_rb_kpi_label">Avoided procurement found (estimate)</div>
+                        <div class="o_elaf_rb_kpi_value"><t t-esc="money(d.value.avoided_value)"/></div>
+                        <div class="o_elaf_rb_kpi_hint"><span class="o_elaf_rb_estimate">Estimate</span>
+                            · quantity x product cost over <t t-esc="d.value.runs"/> analysed run(s)</div>
+                    </div>
+                    <div class="o_elaf_rb_kpi" t-if="!d.is_pro">
+                        <div class="o_elaf_rb_kpi_label">Recommendations beyond the Lite 10</div>
+                        <div class="o_elaf_rb_kpi_value"><t t-esc="d.value.hidden_count"/></div>
+                        <div class="o_elaf_rb_kpi_hint"><t t-esc="fmt(d.value.hidden_qty)"/> units,
+                            <t t-esc="money(d.value.avoided_hidden)"/> estimated</div>
+                    </div>
+                    <div class="o_elaf_rb_kpi">
+                        <div class="o_elaf_rb_kpi_label">Warehouses not analysed yet</div>
+                        <div class="o_elaf_rb_kpi_value"><t t-esc="d.value.warehouses_not_analysed"/></div>
+                        <div class="o_elaf_rb_kpi_hint">of <t t-esc="d.value.warehouses_total"/> warehouses in this company</div>
+                    </div>
+                    <div class="o_elaf_rb_kpi">
+                        <div class="o_elaf_rb_kpi_label">Stocked products not analysed yet</div>
+                        <div class="o_elaf_rb_kpi_value"><t t-esc="d.value.products_not_analysed"/></div>
+                        <div class="o_elaf_rb_kpi_hint">of <t t-esc="d.value.products_stocked"/> products with stock</div>
+                    </div>
+                    <div class="o_elaf_rb_kpi o_elaf_rb_usage" t-if="d.usage.capped">
+                        <div class="o_elaf_rb_kpi_label">Lite analyses used</div>
+                        <div class="o_elaf_rb_kpi_value"><bdi><t t-esc="d.usage.used"/> / <t t-esc="d.usage.limit"/></bdi></div>
+                        <div class="o_elaf_rb_progress">
+                            <div t-attf-class="o_elaf_rb_progress_bar {{ d.usage.percent >= 100 ? 'bad' : (d.usage.percent >= 80 ? 'warn' : '') }}"
+                                 t-attf-style="width: {{ d.usage.percent }}%"/>
+                        </div>
+                        <div class="o_elaf_rb_kpi_hint"><t t-esc="d.usage.remaining"/> remaining</div>
+                    </div>
+                </div>
+                <div class="o_elaf_rb_grid">
+                    <div class="o_elaf_rb_card">
+                        <h2>Feature comparison</h2>
+                        <div class="o_elaf_rb_table_wrap">
+                            <table class="o_elaf_rb_table o_elaf_rb_cmp">
+                                <thead><tr><th>Feature</th><th class="c">Lite</th><th class="c">Pro</th></tr></thead>
+                                <tbody>
+                                    <t t-foreach="d.features" t-as="f" t-key="f_index">
+                                        <tr>
+                                            <td t-esc="f.label"/>
+                                            <td t-attf-class="c {{ f.lite === '✓' ? 'yes' : '' }}" t-esc="f.lite"/>
+                                            <td t-attf-class="c {{ f.pro === '✓' ? 'yes' : '' }}" t-esc="f.pro"/>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="o_elaf_rb_card">
+                        <h2>Lite edition limits</h2>
+                        <ul>
+                            <t t-foreach="d.limits_text" t-as="l" t-key="l_index"><li t-esc="l"/></t>
+                        </ul>
+                        <h2 class="mt-3">How upgrading works</h2>
+                        <p>Install the Pro module (Stock Rebalancing, <code>elaf_stock_rebalance</code>).
+                            All your data, settings and history are kept; the limits are removed and the Pro
+                            features appear in the same menus.</p>
+                        <button t-if="!d.is_pro" class="btn btn-primary" t-on-click="discoverPro">Discover Pro</button>
+                        <p class="text-muted small mt-2">Support: <a t-attf-href="mailto:{{ d.support_email }}" t-esc="d.support_email"/></p>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>
