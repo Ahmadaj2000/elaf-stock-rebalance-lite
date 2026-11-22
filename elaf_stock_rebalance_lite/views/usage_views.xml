@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elaf_rebalance_usage_list" model="ir.ui.view">
+        <field name="name">elaf.rebalance.usage.list</field>
+        <field name="model">elaf.rebalance.usage</field>
+        <field name="arch" type="xml">
+            <tree string="Usage" create="0" edit="0" delete="0">
+                <field name="key"/>
+                <field name="used"/>
+                <field name="limit"/>
+                <field name="bound_company_id"/>
+                <field name="last_used_at"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_elaf_rebalance_usage_log_list" model="ir.ui.view">
+        <field name="name">elaf.rebalance.usage.log.list</field>
+        <field name="model">elaf.rebalance.usage.log</field>
+        <field name="arch" type="xml">
+            <tree string="Usage Log" create="0" edit="0" delete="0">
+                <field name="at"/>
+                <field name="key"/>
+                <field name="event" widget="badge" decoration-success="event == 'consumed'"
+                       decoration-danger="event == 'denied'" decoration-info="event == 'unchanged'"/>
+                <field name="user_id"/>
+                <field name="res_model"/>
+                <field name="res_id"/>
+                <field name="used_after"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_elaf_rebalance_usage" model="ir.actions.act_window">
+        <field name="name">Lite Usage</field>
+        <field name="res_model">elaf.rebalance.usage</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="action_elaf_rebalance_usage_log" model="ir.actions.act_window">
+        <field name="name">Usage Log</field>
+        <field name="res_model">elaf.rebalance.usage.log</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>

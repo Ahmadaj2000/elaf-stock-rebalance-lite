@@ -1,0 +1,164 @@
+// ELAF design kit v1 — vendor into each module and replace the prefix `o_elaf_rb_`
+// with `o_elaf_<prod>_` (e.g. o_elaf_appr_). Pure SCSS, no external fonts/libraries.
+// Works on Odoo 17/18/19 backends (Bootstrap 5 present). RTL-safe (logical props).
+
+$elaf-ink: #1f2933;
+$elaf-muted: #52606d;
+$elaf-line: #d9e2ec;
+$elaf-surface: #ffffff;
+$elaf-canvas: #f5f7fa;
+$elaf-ok: #2b8a3e;
+$elaf-warn: #e67700;
+$elaf-bad: #c92a2a;
+$elaf-info: #1971c2;
+// Product accent — set per product:
+// approval #3b5bdb · health #0ca678 · cashflow #1098ad · rebalance #f08c00
+$elaf-accent: #f08c00 !default;
+
+.o_elaf_rb_dashboard, .o_elaf_rb_comparison {
+    background: $elaf-canvas;
+    color: $elaf-ink;
+    height: 100%;
+    min-height: 100%;
+    overflow: auto;
+    padding: 24px;
+    font-size: 14px;
+
+    .o_elaf_rb_header {
+        display: flex; flex-wrap: wrap; gap: 12px;
+        align-items: center; justify-content: space-between;
+        margin-block-end: 20px;
+        h1 { font-size: 22px; font-weight: 600; margin: 0; }
+        .o_elaf_rb_subtitle { color: $elaf-muted; margin: 2px 0 0; }
+        border-inline-start: 4px solid $elaf-accent;
+        padding-inline-start: 12px;
+    }
+    .o_elaf_rb_filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+    .o_elaf_rb_kpis {
+        display: grid; gap: 16px; margin-block-end: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .o_elaf_rb_kpi {
+        background: $elaf-surface; border: 1px solid $elaf-line; border-radius: 10px;
+        padding: 16px; cursor: pointer; transition: box-shadow .15s, transform .15s;
+        &:hover { box-shadow: 0 4px 14px rgba(31,41,51,.08); transform: translateY(-1px); }
+        .o_elaf_rb_kpi_label { color: $elaf-muted; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+        .o_elaf_rb_kpi_value { font-size: 26px; font-weight: 700; margin-top: 6px; line-height: 1.1; }
+        .o_elaf_rb_kpi_hint { color: $elaf-muted; font-size: 12px; margin-top: 4px; }
+        &.is-ok .o_elaf_rb_kpi_value { color: $elaf-ok; }
+        &.is-warn .o_elaf_rb_kpi_value { color: $elaf-warn; }
+        &.is-bad .o_elaf_rb_kpi_value { color: $elaf-bad; }
+    }
+
+    .o_elaf_rb_grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: start; }
+    @media (max-width: 1100px) { .o_elaf_rb_grid { grid-template-columns: minmax(0, 1fr); } }
+    .o_elaf_rb_card {
+        background: $elaf-surface; border: 1px solid $elaf-line; border-radius: 10px;
+        padding: 16px; min-width: 0;
+        h2 { font-size: 15px; font-weight: 600; margin: 0 0 12px; }
+    }
+    .o_elaf_rb_table_wrap { overflow-x: auto; }
+    .o_elaf_rb_table {
+        width: 100%; border-collapse: collapse;
+        th { color: $elaf-muted; font-weight: 600; font-size: 12px; text-align: start; border-bottom: 1px solid $elaf-line; padding: 6px 8px; }
+        td { border-bottom: 1px solid lighten($elaf-line, 4%); padding: 8px; text-align: start; }
+        td.num, th.num { text-align: end; font-variant-numeric: tabular-nums; }
+        tr.o_elaf_rb_clickable { cursor: pointer; &:hover td { background: $elaf-canvas; } }
+    }
+    .o_elaf_rb_pill {
+        display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600;
+        background: lighten($elaf-info, 45%); color: $elaf-info;
+        &.ok { background: lighten($elaf-ok, 50%); color: $elaf-ok; }
+        &.warn { background: lighten($elaf-warn, 45%); color: darken($elaf-warn, 8%); }
+        &.bad { background: lighten($elaf-bad, 45%); color: $elaf-bad; }
+    }
+    .o_elaf_rb_estimate { font-style: italic; color: $elaf-muted; }   // label for estimates
+    .o_elaf_rb_forecast { stroke-dasharray: 5 4; }                     // forecast lines in SVG
+    .o_elaf_rb_reco {
+        border-inline-start: 3px solid $elaf-accent; background: $elaf-canvas;
+        padding: 10px 12px; border-radius: 6px; margin-bottom: 8px;
+    }
+    .o_elaf_rb_state {           // loading / empty / error
+        text-align: center; color: $elaf-muted; padding: 48px 16px;
+        .o_elaf_rb_state_title { font-size: 16px; color: $elaf-ink; font-weight: 600; margin-bottom: 6px; }
+        &.error .o_elaf_rb_state_title { color: $elaf-bad; }
+    }
+    svg.o_elaf_rb_chart { width: 100%; height: auto; display: block;
+        .bar { fill: $elaf-accent; } .bar.neg { fill: $elaf-bad; }
+        .axis { stroke: $elaf-line; } text { fill: $elaf-muted; font-size: 11px; }
+        .line { fill: none; stroke: $elaf-accent; stroke-width: 2; }
+        .threshold { stroke: $elaf-bad; stroke-dasharray: 4 3; }
+    }
+}
+@media (max-width: 768px) {
+    .o_elaf_rb_dashboard { padding: 12px;
+        .o_elaf_rb_grid { grid-template-columns: 1fr; } }
+}
+
+// ---- Stock Rebalancing specifics -------------------------------------------
+.o_elaf_rb_dashboard, .o_elaf_rb_comparison {
+    .o_elaf_rb_badge {
+        display: inline-block; border-radius: 6px; padding: 2px 8px; font-size: 11px; font-weight: 700;
+        text-transform: uppercase; letter-spacing: .05em; background: lighten($elaf-accent, 40%);
+        color: darken($elaf-accent, 18%); margin-inline-start: 8px; vertical-align: middle;
+        &.pro { background: $elaf-ink; color: #fff; }
+    }
+    .o_elaf_rb_lock { display: inline-block; border-radius: 999px; padding: 1px 8px; font-size: 11px;
+        font-weight: 600; background: $elaf-ink; color: #fff; margin-inline-start: 6px; }
+    .o_elaf_rb_usage {
+        .o_elaf_rb_progress { height: 8px; border-radius: 999px; background: $elaf-line; overflow: hidden; margin: 8px 0 4px; }
+        .o_elaf_rb_progress_bar { height: 100%; background: $elaf-accent; transition: width .3s;
+            &.warn { background: $elaf-warn; } &.bad { background: $elaf-bad; } }
+    }
+    .o_elaf_rb_banner { border-radius: 8px; padding: 10px 14px; margin-block-end: 16px; display: flex;
+        gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+        background: lighten($elaf-info, 47%); color: darken($elaf-info, 10%); border: 1px solid lighten($elaf-info, 35%);
+        &.warn { background: lighten($elaf-warn, 47%); color: darken($elaf-warn, 15%); border-color: lighten($elaf-warn, 30%); }
+        &.bad { background: lighten($elaf-bad, 47%); color: $elaf-bad; border-color: lighten($elaf-bad, 30%); }
+    }
+    .o_elaf_rb_heat {
+        td.o_elaf_rb_cell { text-align: center; cursor: pointer; font-variant-numeric: tabular-nums; white-space: nowrap;
+            border-inline-start: 2px solid $elaf-surface; }
+        td.o_elaf_rb_cell.shortage { background: lighten($elaf-bad, 42%); color: darken($elaf-bad, 5%); }
+        td.o_elaf_rb_cell.balanced { background: lighten($elaf-ok, 52%); color: $elaf-ok; }
+        td.o_elaf_rb_cell.excess { background: lighten($elaf-warn, 44%); color: darken($elaf-warn, 12%); }
+        td.o_elaf_rb_cell.inactive { background: $elaf-canvas; color: $elaf-muted; }
+        td.o_elaf_rb_cell:hover { outline: 2px solid $elaf-accent; outline-offset: -2px; }
+        .o_elaf_rb_after { display: block; font-size: 11px; opacity: .8; }
+        th.o_elaf_rb_wh { text-align: center; }
+    }
+    .o_elaf_rb_legend { display: flex; flex-wrap: wrap; gap: 8px; margin-block-start: 8px; font-size: 12px; }
+    .o_elaf_rb_reco { cursor: pointer; &:hover { box-shadow: 0 2px 8px rgba(31,41,51,.08); }
+        .o_elaf_rb_reco_head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-weight: 600; }
+        .o_elaf_rb_reco_text { color: $elaf-muted; font-size: 12px; margin-top: 4px; }
+    }
+    .o_elaf_rb_kpi.is-locked { cursor: pointer; opacity: .85; border-style: dashed; }
+    .o_elaf_rb_locked_list { list-style: none; padding: 0; margin: 0;
+        li { padding: 6px 0; border-bottom: 1px solid $elaf-line; display: flex; justify-content: space-between; gap: 8px; } }
+    .o_elaf_rb_spinner { width: 32px; height: 32px; border: 3px solid $elaf-line; border-top-color: $elaf-accent;
+        border-radius: 50%; margin: 0 auto 12px; animation: o_elaf_rb_spin 1s linear infinite; }
+    .o_elaf_rb_value { font-size: 22px; font-weight: 700; color: $elaf-ink; }
+    .o_elaf_rb_cmp td.c, .o_elaf_rb_cmp th.c { text-align: center; }
+    .o_elaf_rb_cmp td.yes { color: $elaf-ok; font-weight: 700; }
+    svg.o_elaf_rb_chart .bar.after { fill: $elaf-ok; }
+    svg.o_elaf_rb_chart .bar.before { fill: lighten($elaf-bad, 15%); }
+}
+@keyframes o_elaf_rb_spin { to { transform: rotate(360deg); } }
+
+// direction arrows follow the reading direction (Odoo sets body.o_rtl for Arabic)
+.o_rtl .o_elaf_rb_dir { display: inline-block; transform: scaleX(-1); }
+
+// ELAF scroll fix: Odoo sets overflow:hidden on .o_action (3-class rule); let our client actions scroll.
+.o_web_client .o_action_manager > .o_action.o_elaf_rb_dashboard, .o_web_client .o_action_manager > .o_action.o_elaf_rb_comparison {
+    display: block;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: auto;              // Odoo hides the scrollbar on desktop; show it so users see they can scroll
+    &::-webkit-scrollbar { display: block; width: 10px; }
+    &::-webkit-scrollbar-thumb { background: #c5ccd6; border-radius: 6px; }
+}
+
+// Keep the before/after chart readable on wide screens (SVG text scales with width).
+.o_elaf_rb_dashboard .o_elaf_rb_sim_card svg.o_elaf_rb_chart { max-width: 560px; }

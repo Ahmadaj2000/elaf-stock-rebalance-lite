@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elaf_rebalance_run_list" model="ir.ui.view">
+        <field name="name">elaf.rebalance.run.list</field>
+        <field name="model">elaf.rebalance.run</field>
+        <field name="arch" type="xml">
+            <tree string="Analysis Runs" export_xlsx="0">
+                <field name="name"/>
+                <field name="date_analysis"/>
+                <field name="user_id" widget="many2one_avatar_user" optional="show"/>
+                <field name="warehouse_ids" widget="many2many_tags"/>
+                <field name="product_count" optional="show"/>
+                <field name="shortage_count"/>
+                <field name="excess_count"/>
+                <field name="line_count"/>
+                <field name="recommended_qty" optional="show"/>
+                <field name="avoided_procurement_value" string="Avoided Proc. (est.)" optional="show"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
+                <field name="state" widget="badge" decoration-success="state == 'analyzed'"
+                       decoration-muted="state == 'cancel'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_elaf_rebalance_run_form" model="ir.ui.view">
+        <field name="name">elaf.rebalance.run.form</field>
+        <field name="model">elaf.rebalance.run</field>
+        <field name="arch" type="xml">
+            <form string="Analysis Run">
+                <header>
+                    <button name="action_analyze" type="object" string="Analyse" class="btn-primary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_analyze" type="object" string="Re-run Analysis"
+                            invisible="state != 'analyzed'"
+                            confirm="Re-running replaces the current coverage and recommendations of this run. It counts as a new analysis unless the parameters and the stock data are unchanged. Continue?"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state == 'cancel'"/>
+                    <button name="action_reset_draft" type="object" string="Reset to Draft"
+                            invisible="state != 'cancel'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,analyzed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_stats" type="object" class="oe_stat_button"
+                                icon="fa-table" invisible="state != 'analyzed'">
+                            <field name="product_count" widget="statinfo" string="Products"/>
+                        </button>
+                        <button name="action_view_shortages" type="object" class="oe_stat_button"
+                                icon="fa-arrow-down" invisible="state != 'analyzed'">
+                            <field name="shortage_count" widget="statinfo" string="Shortages"/>
+                        </button>
+                        <button name="action_view_excesses" type="object" class="oe_stat_button"
+                                icon="fa-arrow-up" invisible="state != 'analyzed'">
+                            <field name="excess_count" widget="statinfo" string="Excesses"/>
+                        </button>
+                        <button name="action_view_lines" type="object" class="oe_stat_button"
+                                icon="fa-exchange" invisible="state != 'analyzed'">
+                            <field name="line_count" widget="statinfo" string="Recommendations"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <div class="alert alert-warning" role="status" invisible="hidden_line_count == 0">
+                        <field name="hidden_line_count" class="oe_inline" readonly="1"/> additional
+                        recommendations (<field name="hidden_line_qty" class="oe_inline" readonly="1"/> units,
+                        avoided procurement estimate <field name="hidden_avoided_value" class="oe_inline" readonly="1"/>)
+                        were found beyond the 10 shown by the Lite edition.
+                    </div>
+                    <group>
+                        <group string="Scope" name="scope">
+                            <field name="company_id" groups="base.group_multi_company" readonly="state != 'draft'"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="warehouse_ids" widget="many2many_tags" readonly="state != 'draft'"
+                                   options="{'no_create': True}"/>
+                            <field name="product_categ_ids" widget="many2many_tags" readonly="state != 'draft'"
+                                   options="{'no_create': True}"/>
+                            <field name="product_ids" widget="many2many_tags" readonly="state != 'draft'"
+                                   options="{'no_create': True}"/>
+                        </group>
+                        <group string="Parameters" name="params">
+                            <field name="lookback_days" readonly="state != 'draft'"/>
+                            <field name="target_coverage_days" readonly="state != 'draft'"/>
+                            <field name="donor_min_coverage_days" readonly="state != 'draft'"/>
+                            <field name="whole_units" readonly="state != 'draft'"/>
+                            <field name="user_id" readonly="state != 'draft'"/>
+                            <field name="date_analysis"/>
+                        </group>
+                    </group>
+                    <group invisible="state != 'analyzed'" name="results">
+                        <group string="Results">
+                            <field name="recommended_qty"/>
+                            <field name="avoided_procurement_value"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <div class="text-muted fst-italic" colspan="2">
+                                Avoided procurement is an ESTIMATE: recommended quantity x product cost,
+                                the purchase value the receivers would otherwise need.
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Recommendations" name="lines" invisible="state != 'analyzed'">
+                            <field name="line_ids" readonly="1">
+                                <tree>
+                                    <field name="product_id"/>
+                                    <field name="donor_warehouse_id"/>
+                                    <field name="receiver_warehouse_id"/>
+                                    <field name="quantity"/>
+                                    <field name="uom_id"/>
+                                    <field name="avoided_procurement_value" string="Avoided Proc. (est.)"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                    <field name="explanation"/>
+                                    <field name="state" widget="badge"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Coverage" name="stats" invisible="state != 'analyzed'">
+                            <field name="stat_ids" readonly="1">
+                                <tree decoration-danger="status == 'shortage'" decoration-warning="status == 'excess'">
+                                    <field name="product_id"/>
+                                    <field name="warehouse_id"/>
+                                    <field name="on_hand_qty"/>
+                                    <field name="reserved_qty"/>
+                                    <field name="available_qty"/>
+                                    <field name="daily_demand"/>
+                                    <field name="coverage_display" string="Coverage (days)"/>
+                                    <field name="status" widget="badge"/>
+                                    <field name="need_qty"/>
+                                    <field name="spare_qty"/>
+                                    <field name="coverage_after_days"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="analysis_note" placeholder="Analysis notes appear here after the analysis."/>
+                            <div class="text-muted mt-3">
+                                <p><b>How it works.</b> Daily demand = done deliveries to customers from the warehouse
+                                    during the look-back period (minus customer returns) / look-back days.
+                                    Available = on hand - reserved (never negative). Coverage = available / daily demand.
+                                    Shortage: coverage below the target. Excess: coverage above donor minimum + target.</p>
+                                <p>Recommended quantity = min(receiver need to reach the target coverage,
+                                    donor stock above its minimum coverage). Reserved stock is never proposed.</p>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elaf_rebalance_run_search" model="ir.ui.view">
+        <field name="name">elaf.rebalance.run.search</field>
+        <field name="model">elaf.rebalance.run</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="warehouse_ids"/>
+                <field name="user_id"/>
+                <filter name="my" string="My Runs" domain="[('user_id', '=', uid)]"/>
+                <filter name="analyzed" string="Analysed" domain="[('state', '=', 'analyzed')]"/>
+                <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elaf_rebalance_run" model="ir.actions.act_window">
+        <field name="name">Analysis Runs</field>
+        <field name="res_model">elaf.rebalance.run</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first rebalancing analysis</p>
+            <p>Select the warehouses to compare, set the coverage targets and click Analyse.</p>
+        </field>
+    </record>
+</odoo>

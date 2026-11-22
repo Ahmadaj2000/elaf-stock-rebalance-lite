@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elaf_rebalance_line_list" model="ir.ui.view">
+        <field name="name">elaf.rebalance.line.list</field>
+        <field name="model">elaf.rebalance.line</field>
+        <field name="arch" type="xml">
+            <tree string="Recommendations" create="0" edit="0" delete="0" export_xlsx="0">
+                <field name="sequence" column_invisible="1"/>
+                <field name="run_id" optional="hide"/>
+                <field name="product_id"/>
+                <field name="donor_warehouse_id"/>
+                <field name="receiver_warehouse_id"/>
+                <field name="quantity" sum="Total"/>
+                <field name="uom_id"/>
+                <field name="receiver_coverage_days" string="Receiver Cover (d)"/>
+                <field name="receiver_coverage_after_days" string="After (d)"/>
+                <field name="donor_coverage_after_days" string="Donor After (d)" optional="show"/>
+                <field name="avoided_procurement_value" string="Avoided Proc. (est.)" sum="Total" optional="show"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="reason" optional="hide"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_elaf_rebalance_line_form" model="ir.ui.view">
+        <field name="name">elaf.rebalance.line.form</field>
+        <field name="model">elaf.rebalance.line</field>
+        <field name="arch" type="xml">
+            <form string="Recommendation" create="0" edit="0" delete="0">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h2><field name="product_id" readonly="1"/></h2>
+                        <div>
+                            <field name="quantity" class="oe_inline"/> <field name="uom_id" class="oe_inline"/>:
+                            <field name="donor_warehouse_id" class="oe_inline"/> &#8594;
+                            <field name="receiver_warehouse_id" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <div class="alert alert-info" role="status">
+                        <field name="explanation" nolabel="1"/>
+                    </div>
+                    <group>
+                        <group string="Receiver">
+                            <field name="receiver_available_qty"/>
+                            <field name="receiver_daily_demand"/>
+                            <field name="receiver_coverage_days"/>
+                            <field name="receiver_need_qty"/>
+                            <field name="receiver_coverage_after_days"/>
+                        </group>
+                        <group string="Donor (protected)">
+                            <field name="donor_available_qty"/>
+                            <field name="donor_reserved_qty"/>
+                            <field name="donor_daily_demand"/>
+                            <field name="donor_coverage_days" invisible="donor_coverage_infinite"/>
+                            <field name="donor_coverage_infinite"/>
+                            <field name="donor_protected_qty"/>
+                            <field name="donor_spare_qty"/>
+                            <field name="donor_coverage_after_days" invisible="donor_coverage_infinite"/>
+                        </group>
+                        <group string="Avoided procurement (estimate)" name="avoided">
+                            <field name="unit_cost"/>
+                            <field name="avoided_procurement_value"/>
+                            <field name="currency_id" invisible="1"/>
+                            <div class="text-muted fst-italic" colspan="2" name="avoided_formula">
+                                Estimate = recommended quantity x product cost.
+                            </div>
+                        </group>
+                        <group string="Run" name="run">
+                            <field name="run_id" readonly="1"/>
+                            <field name="reason"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elaf_rebalance_line_search" model="ir.ui.view">
+        <field name="name">elaf.rebalance.line.search</field>
+        <field name="model">elaf.rebalance.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_id"/>
+                <field name="donor_warehouse_id"/>
+                <field name="receiver_warehouse_id"/>
+                <field name="run_id"/>
+                <filter name="group_receiver" string="Receiver" context="{'group_by': 'receiver_warehouse_id'}"/>
+                <filter name="group_donor" string="Donor" context="{'group_by': 'donor_warehouse_id'}"/>
+                <filter name="group_run" string="Run" context="{'group_by': 'run_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elaf_rebalance_line" model="ir.actions.act_window">
+        <field name="name">Recommendations</field>
+        <field name="res_model">elaf.rebalance.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No recommendations yet</p>
+            <p>Analyse a run: recommendations appear when a warehouse is in shortage and another one can spare stock.</p>
+        </field>
+    </record>
+</odoo>

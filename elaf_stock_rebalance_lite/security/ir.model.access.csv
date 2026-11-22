@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_run_user,run user,model_elaf_rebalance_run,group_rebalance_user,1,1,1,0
+access_run_manager,run manager,model_elaf_rebalance_run,group_rebalance_manager,1,1,1,1
+access_stat_user,stat user,model_elaf_rebalance_stat,group_rebalance_user,1,0,0,0
+access_line_user,line user,model_elaf_rebalance_line,group_rebalance_user,1,0,0,0
+access_usage_user,usage user,model_elaf_rebalance_usage,group_rebalance_user,1,0,0,0
+access_usage_log_user,usage log user,model_elaf_rebalance_usage_log,group_rebalance_user,1,0,0,0
