@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elaf_rebalance_stat_list" model="ir.ui.view">
+        <field name="name">elaf.rebalance.stat.list</field>
+        <field name="model">elaf.rebalance.stat</field>
+        <field name="arch" type="xml">
+            <list string="Coverage" create="0" edit="0" delete="0" export_xlsx="0"
+                  decoration-danger="status == 'shortage'" decoration-warning="status == 'excess'"
+                  decoration-muted="status == 'inactive'">
+                <field name="run_id" optional="hide"/>
+                <field name="product_id"/>
+                <field name="warehouse_id"/>
+                <field name="on_hand_qty" sum="Total"/>
+                <field name="reserved_qty" sum="Total"/>
+                <field name="available_qty" sum="Total"/>
+                <field name="demand_qty" sum="Total"/>
+                <field name="daily_demand"/>
+                <field name="coverage_display" string="Coverage (days)"/>
+                <field name="coverage_infinite" column_invisible="1"/>
+                <field name="status" widget="badge" decoration-danger="status == 'shortage'"
+                       decoration-warning="status == 'excess'" decoration-success="status == 'balanced'"/>
+                <field name="need_qty" optional="show"/>
+                <field name="spare_qty" optional="show"/>
+                <field name="incoming_qty" optional="hide"/>
+                <field name="outgoing_qty" optional="hide"/>
+                <field name="coverage_after_days" optional="hide"/>
+                <field name="uom_id" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elaf_rebalance_stat_form" model="ir.ui.view">
+        <field name="name">elaf.rebalance.stat.form</field>
+        <field name="model">elaf.rebalance.stat</field>
+        <field name="arch" type="xml">
+            <form string="Coverage" create="0" edit="0" delete="0">
+                <sheet>
+                    <div class="oe_title">
+                        <h2><field name="product_id" readonly="1"/></h2>
+                        <field name="warehouse_id" readonly="1"/>
+                    </div>
+                    <group>
+                        <group string="Stock">
+                            <field name="on_hand_qty"/>
+                            <field name="reserved_qty"/>
+                            <field name="available_qty"/>
+                            <field name="uom_id"/>
+                        </group>
+                        <group string="Demand and coverage">
+                            <field name="demand_qty"/>
+                            <field name="daily_demand"/>
+                            <field name="coverage_display" string="Coverage (days)"/>
+                            <field name="status" widget="badge"/>
+                        </group>
+                        <group string="Targets">
+                            <field name="target_qty"/>
+                            <field name="protected_qty"/>
+                            <field name="need_qty"/>
+                            <field name="spare_qty"/>
+                        </group>
+                        <group string="After recommendations">
+                            <field name="incoming_qty"/>
+                            <field name="outgoing_qty"/>
+                            <field name="available_after_qty"/>
+                            <field name="coverage_after_days"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="run_id" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elaf_rebalance_stat_pivot" model="ir.ui.view">
+        <field name="name">elaf.rebalance.stat.pivot</field>
+        <field name="model">elaf.rebalance.stat</field>
+        <field name="arch" type="xml">
+            <pivot string="Coverage">
+                <field name="product_id" type="row"/>
+                <field name="warehouse_id" type="col"/>
+                <field name="available_qty" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_elaf_rebalance_stat_search" model="ir.ui.view">
+        <field name="name">elaf.rebalance.stat.search</field>
+        <field name="model">elaf.rebalance.stat</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_id"/>
+                <field name="warehouse_id"/>
+                <field name="run_id"/>
+                <filter name="shortage" string="Shortage" domain="[('status', '=', 'shortage')]"/>
+                <filter name="excess" string="Excess" domain="[('status', '=', 'excess')]"/>
+                <filter name="balanced" string="Balanced" domain="[('status', '=', 'balanced')]"/>
+                <separator/>
+                <filter name="reserved" string="With reservations" domain="[('reserved_qty', '>', 0)]"/>
+                <filter name="group_product" string="Product" context="{'group_by': 'product_id'}"/>
+                <filter name="group_warehouse" string="Warehouse" context="{'group_by': 'warehouse_id'}"/>
+                <filter name="group_status" string="Status" context="{'group_by': 'status'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elaf_rebalance_stat" model="ir.actions.act_window">
+        <field name="name">Coverage</field>
+        <field name="res_model">elaf.rebalance.stat</field>
+        <field name="view_mode">list,pivot,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No coverage data yet</p>
+            <p>Create an analysis run and click Analyse to compute coverage per product and warehouse.</p>
+        </field>
+    </record>
+</odoo>
